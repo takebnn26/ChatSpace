@@ -13,6 +13,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # View関連
 gem 'sass-rails', '~> 5.0'
+gem 'haml-rails'
+gem 'erb2haml'
 
 # JS関連
 gem 'coffee-rails', '~> 4.2'
