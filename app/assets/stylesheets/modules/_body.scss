@@ -1,0 +1,119 @@
+.chat-main {
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+
+  &__header {
+    height: 15%;
+    border: $side-border;
+
+    &--group {
+      margin: 0 40px;
+
+      &-name {
+        color: #333;
+        font-size: 20px;
+        margin: 35px 0 15px;
+        float: left;
+      }
+
+      &-edit-btn {
+        color: #FFCAAD;
+        font-size: 15px;
+        padding: 12.5px 20px;
+        margin: 28px 20px 0;
+        border: $btn-border;
+        float: right;
+      }
+    }
+
+    &-members {
+      color: $sub-font-color;
+      font-size: 12px;
+      margin: 0 40px;
+    }
+  }
+
+  &__body {
+    height: calc( 100vh - 15% - 90px );
+
+    &--messages-list {
+    height: 100%;
+    padding-top: 26px;
+    padding-left: 40px;
+    overflow-y: scroll;
+
+      .chat-main__message {
+        padding: 20px 0;
+
+        &-name {
+          color: $massage-color;
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+        }
+
+        &-time {
+          color: $sub-font-color;
+          font-size: 12px;
+          padding: 0 10px 10px;
+          float: left;
+        }
+
+        &-body {
+          color: $massage-color;
+          clear: both;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    height: 90px;
+    width: 100%;
+    background-color: #B8C3C7;
+
+    &-form {
+      margin: 0 40px;
+      position: relative;
+    }
+
+    &-body {
+      position: relative;
+
+      .message {
+        height: 50px;
+        width: calc( 100% - 130px );
+        padding: 15px 10px;
+        margin: 20px 0;
+        border: none;
+      }
+
+      .chat-file {
+        height: 50px;
+        width: 40px;
+        margin: 32px 130px 20px 0;
+        position: absolute;
+        top: 0; right: 0;
+
+        .image {
+          position: absolute;
+          top: 15px; left: 15px;
+          display: none;
+        }
+      }
+    }
+
+    .submit {
+      color: $white;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      background-color: #FFCAAD;
+      margin: 20px 0;
+      position: absolute;
+      top: 0; right: 0;
+      border: none;
+    }
+  }
+}
