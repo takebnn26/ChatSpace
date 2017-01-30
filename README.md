@@ -1,24 +1,68 @@
-# README
+# Chat Space
+## DB Settings
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+***
 
-Things you may want to cover:
+### Users Table
 
-* Ruby version
+- columns and data type
 
-* System dependencies
+| columns | data type | constraint |
+|:-------:|:---------:|:----------:|
+| name | string | index: true, null: false, unique: true |
 
-* Configuration
+- association
 
-* Database creation
+has_many :groups  
+has_many :messages  
+has_many :groups_users
 
-* Database initialization
+***
 
-* How to run the test suite
+### Groups Table
 
-* Services (job queues, cache servers, search engines, etc.)
+- columns and data type
 
-* Deployment instructions
+| columns | data type | constraint |
+|:-------:|:---------:|:----------:|
+| name | string | null: false, unique: true |
 
-* ...
+- association
+
+has_many :users  
+has_many :messages  
+has_many :groups_users
+
+***
+
+### Messages Table
+
+- columns and data type
+
+| columns | data type | constraint |
+|:-------:|:---------:|:----------:|
+| body | text ||
+| image | string ||
+| user_id | integer | null: false, foreign_key: true |
+| grouop_id | integer | null: false, foreign_key: true |
+
+- association
+
+belongs_to :group  
+belongs_to :user
+
+***
+
+### GroupsUsers Table
+
+- columns and data type
+
+| columns | data type | constraint |
+|:-------:|:---------:|:----------:|
+| user_id | integer | null: false, foreign_key: true |
+| grouop_id | integer | null: false, foreign_key: true |
+
+- association
+
+belongs_to :group  
+belongs_to :user
